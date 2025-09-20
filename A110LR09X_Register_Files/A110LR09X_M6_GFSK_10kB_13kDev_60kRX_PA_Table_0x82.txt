@@ -1,0 +1,89 @@
+ Deviation = 13.183594 
+ Base frequency = 867.999985 
+ Modulated = true 
+ Modulation format = GFSK 
+ Manchester enable = false 
+ Sync word qualifier mode = 30/32 sync word bits detected 
+ Preamble count = 4 
+ Data rate = 9.99069 
+ RX filter BW = 60.267857 
+ Data format = Normal mode 
+ CRC enable = true 
+ Device address = 0 
+ Address config = No address check 
+ CRC autoflush = false 
+ PA ramping = false
+ PA_TABLE = (0x82,0x8A,0x8E,0x67,0x6D,0x24,0x22,0x03) corresponding to (4.6, 2.5, 0, -5, -10, -15, -20, -30)dBm.
+ Depending on the operation sub-band, higher power levels may be used. See A110LR09X User's Manual for details.
+ ----------------------------------------------------------------------------------
+ |              | Low Temp (dBm[Hex]) |Room Temp (dBm[Hex]) |High Temp (dBm[Hex]) |
+ ----------------------------------------------------------------------------------
+ | 14 dBm Limit |       12  (0xC0)    |       12  (0xC0)    |       12  (0xC0)    |
+ ----------------------------------------------------------------------------------
+ | 10 dBm Limit |       8.6 (0xC8)    |       9.6 (0xC5)    |       10  (0xC4)    |
+ ----------------------------------------------------------------------------------
+ |  7 dBm Limit |       4.6 (0x82)    |       6.2 (0xCE)    |        7  (0xCD)    |
+ ---------------------------------------------------------------------------------- 
+ TX power = unknown 
+:0000:29    IOCFG2
+:0001:2E    IOCFG1
+:0002:06    IOCFG0
+:0003:07    FIFOTHR
+:0004:D3    SYNC1
+:0005:91    SYNC0
+:0006:FF    PKTLEN
+:0007:04    PKTCTRL1
+:0008:05    PKTCTRL0
+:0009:00    ADDR
+:000A:00    RESERVED_0X0A
+:000B:06    FSCTRL1
+:000C:00    FSCTRL0
+:000D:20    FREQ2
+:000E:25    FREQ1
+:000F:ED    FREQ0
+:0010:F8    MDMCFG4
+:0011:84    MDMCFG3
+:0012:13    MDMCFG2
+:0013:20    MDMCFG1
+:0014:F8    DUMMY
+:0015:30    DEVIATN
+:0016:07    MCSM2
+:0017:30    MCSM1
+:0018:18    MCSM0
+:0019:16    FOCCFG
+:001A:6C    BSCFG
+:001B:43    AGCCTRL2
+:001C:4D    AGCCTRL1
+:001D:91    AGCCTRL0
+:001E:00    DUMMY
+:001F:00    DUMMY
+:0020:F8    RESERVED_0X20
+:0021:56    FREND1
+:0022:10    FREND0
+:0023:E9    FSCAL3
+:0024:2A    FSCAL2
+:0025:00    FSCAL1
+:0026:1F    FSCAL0
+:0027:00    DUMMY
+:0028:00    DUMMY
+:0029:59    RESERVED_0X29
+:002A:7F    RESERVED_0X2A
+:002B:3F    RESERVED_0X2B
+:002C:81    TEST2
+:002D:35    TEST1
+:002E:09    TEST0
+:002F:00    DUMMY
+:0030:00    PARTNUM
+:0031:04    VERSION
+:0032:00    FREQEST
+:0033:00    CRC_REG
+:0034:00    RSSI
+:0035:00    MARCSTATE
+:0036:00    DUMMY
+:0037:00    DUMMY
+:0038:00    PKTSTATUS
+:0039:00    DUMMY
+:003A:00    TXBYTES
+:003B:00    RXBYTES
+:003C:00    DUMMY
+:003D:00    DUMMY

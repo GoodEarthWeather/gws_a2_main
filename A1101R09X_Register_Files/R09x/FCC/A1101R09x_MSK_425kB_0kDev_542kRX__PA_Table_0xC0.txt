@@ -1,0 +1,85 @@
+ Phase transition time = 0 
+ Base frequency = 902.809296 
+ Carrier frequency = 902.809296 
+ Channel number = 0 
+ Carrier frequency = 902.809296 
+ Modulated = true 
+ Modulation format = MSK 
+ Manchester enable = false 
+ Sync word qualifier mode = 30/32 sync word bits detected 
+ Preamble count = 8 
+ Channel spacing = 95.611572 
+ Carrier frequency = 902.809296 
+ Data rate = 425.293 
+ RX filter BW = 541.666667 
+ Data format = Normal mode 
+ Length config = Variable packet length mode. Packet length configured by the first byte after sync word 
+ CRC enable = true 
+ Packet length = 255 
+ Device address = 0 
+ Address config = No address check 
+ CRC autoflush = false 
+ PA ramping = false 
+ PA_TABLE = (0xC0,0xC7,0x80,0x70,0x67,0x35,0x19,0x03) corresponding to (12.5, 10, 5, 0, -5, -10, -20, -30)dBm.
+ TX power = unknown 
+:0000:29    IOCFG2
+:0001:2E    IOCFG1
+:0002:06    IOCFG0
+:0003:87    FIFOTHR
+:0004:D3    SYNC1
+:0005:91    SYNC0
+:0006:FF    PKTLEN
+:0007:04    PKTCTRL1
+:0008:45    PKTCTRL0
+:0009:00    ADDR
+:000A:00    CHANNR
+:000B:0E    FSCTRL1
+:000C:00    FSCTRL0
+:000D:22    FREQ2
+:000E:B9    FREQ1
+:000F:33    FREQ0
+:0010:2E    MDMCFG4
+:0011:0C    MDMCFG3
+:0012:73    MDMCFG2
+:0013:21    MDMCFG1
+:0014:E2    MDMCFG0
+:0015:00    DEVIATN
+:0016:07    MCSM2
+:0017:30    MCSM1
+:0018:18    MCSM0
+:0019:1D    FOCCFG
+:001A:1C    BSCFG
+:001B:47    AGCCTRL2
+:001C:00    AGCCTRL1
+:001D:B0    AGCCTRL0
+:001E:87    WOREVT1
+:001F:6B    WOREVT0
+:0020:F8    WORCTRL
+:0021:B7    FREND1
+:0022:10    FREND0
+:0023:EA    FSCAL3
+:0024:2A    FSCAL2
+:0025:00    FSCAL1
+:0026:1F    FSCAL0
+:0027:41    RCCTRL1
+:0028:00    RCCTRL0
+:0029:59    FSTEST
+:002A:7F    PTEST
+:002B:3F    AGCTEST
+:002C:8A    TEST2
+:002D:31    TEST1
+:002E:09    TEST0
+:0030:00    PARTNUM
+:0031:04    VERSION
+:0032:00    FREQEST
+:0033:32    LQI
+:0034:80    RSSI
+:0035:01    MARCSTATE
+:0036:00    WORTIME1
+:0037:00    WORTIME0
+:0038:00    PKTSTATUS
+:0039:94    VCO_VC_DAC
+:003A:00    TXBYTES
+:003B:00    RXBYTES
+:003C:00    RCCTRL1_STATUS
+:003D:00    RCCTRL0_STATUS

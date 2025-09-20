@@ -1,0 +1,79 @@
+ Deviation = 263.671875 
+ Base frequency = 867.999985 
+ Modulated = true 
+ Modulation format = 4-FSK 
+ Manchester enable = false 
+ Sync word qualifier mode = 30/32 sync word bits detected 
+ Preamble count = 4 
+ Data rate = 299.927 
+ RX filter BW = 843.750000 
+ Data format = Normal mode 
+ CRC enable = true 
+ Device address = 0 
+ Address config = No address check 
+ CRC autoflush = false 
+ PA ramping = false
+ PA_TABLE = (0x83,0x8A,0x8E,0x67,0x6D,0x24,0x22,0x03) corresponding to (4.4, 2.5, 0, -5, -10, -15, -20, -30)dBm. 
+ TX power = unknown  
+:0000:29    IOCFG2
+:0001:2E    IOCFG1
+:0002:06    IOCFG0
+:0003:07    FIFOTHR
+:0004:D3    SYNC1
+:0005:91    SYNC0
+:0006:3D    PKTLEN
+:0007:04    PKTCTRL1
+:0008:05    PKTCTRL0
+:0009:00    ADDR
+:000A:00    RESERVED_0X0A
+:000B:0E    FSCTRL1
+:000C:00    FSCTRL0
+:000D:20    FREQ2
+:000E:25    FREQ1
+:000F:ED    FREQ0
+:0010:0D    MDMCFG4
+:0011:6C    MDMCFG3
+:0012:43    MDMCFG2
+:0013:20    MDMCFG1
+:0014:F8    DUMMY
+:0015:72    DEVIATN
+:0016:07    MCSM2
+:0017:30    MCSM1
+:0018:18    MCSM0
+:0019:1D    FOCCFG
+:001A:1C    BSCFG
+:001B:C4    AGCCTRL2
+:001C:00    AGCCTRL1
+:001D:B0    AGCCTRL0
+:001E:00    DUMMY
+:001F:00    DUMMY
+:0020:FB    RESERVED_0X20
+:0021:B7    FREND1
+:0022:10    FREND0
+:0023:EA    FSCAL3
+:0024:2A    FSCAL2
+:0025:00    FSCAL1
+:0026:1F    FSCAL0
+:0027:00    DUMMY
+:0028:00    DUMMY
+:0029:59    RESERVED_0X29
+:002A:7F    RESERVED_0X2A
+:002B:3C    RESERVED_0X2B
+:002C:88    TEST2
+:002D:31    TEST1
+:002E:09    TEST0
+:002F:00    DUMMY
+:0030:00    PARTNUM
+:0031:04    VERSION
+:0032:00    FREQEST
+:0033:00    CRC_REG
+:0034:00    RSSI
+:0035:00    MARCSTATE
+:0036:00    DUMMY
+:0037:00    DUMMY
+:0038:00    PKTSTATUS
+:0039:00    DUMMY
+:003A:00    TXBYTES
+:003B:00    RXBYTES
+:003C:00    DUMMY
+:003D:00    DUMMY
