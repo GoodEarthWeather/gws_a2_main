@@ -17,11 +17,16 @@ static void I2CReceiveCommand(uint8_t address);
 #define I2C_RECEIVE 0
 #define I2C_SEND 1
 
+/**************** NOT USED
+// SI7021 defines
 #define SI7021_ADDRESS 0x40  // 7 bit slave address for SI7021 temperature/humidity sensor
 #define SI7021_MEASURE_HUMIDITY 0xF5  // no hold master mode
 #define SI7021_MEASURE_TEMPERATURE 0xF3  // no hold master mode
 #define SI7021_MEASURE_TEMPERATURE_FROM_HUMIDITY 0xE0  // no hold master mode
+******************/
 
+/**************** NOT USED
+// LPS25HB defines
 #define LPS25HB_ADDRESS 0x5C  // 7 bit slave address for LPS25HB pressure sensor
 #define LPS25HB_CTRL_REG1 0x20  // control register 1
 #define LPS25HB_CTRL_REG2 0x21  // control register 2
@@ -31,10 +36,29 @@ static void I2CReceiveCommand(uint8_t address);
 #define LPS25HB_ONE_SHOT_MODE 0x84  // command to configure to one shot mode
 #define LPS25HB_MEASURE_PRESSURE 0x01  // one shot command to start pressure measurement
 #define LPS25HB_MEASURE_COMPLETE 0x00  // response when measurement is complete
+*****************/
 
+// LPS35HW defines
+#define LPS35HW_ADDRESS 0x5C  // 7 bit slave address for LPS35HW pressure sensor
+#define LPS35HW_CTRL_REG1 0x10  // control register 1
+#define LPS35HW_CTRL_REG2 0x11  // control register 2
+#define LPS35HW_TEMP_OUT 0x2B  // LSB of temperature output register
+#define LPS35HW_PRESS_OUT 0x28  // LSB_XL of pressure output register = 0x28+0x80 for multi byte read
+#define LPS35HW_POWER_DOWN 0x00  // command to power down
+#define LPS35HW_ONE_SHOT_MODE 0x00  // command to configure to one shot mode
+#define LPS35HW_MEASURE_PRESSURE 0x01  // one shot command to start pressure measurement
+#define LPS35HW_MEASURE_COMPLETE 0x00  // response when measurement is complete
+
+/******************** NOT USED
 // definitions for SHT40 humidity/temperature sensor
 #define SHT40_ADDRESS 0x44  // for SHT40-AD1B
 #define SHT40_MEASURE_HT 0xFD  // command to measure humidity and temperature
+***********************/
+
+// definitions for HDC3022 humidity/temperature sensor
+#define HDC3022_ADDRESS 0x44 // ADDR and ADDR1 pins should be grounded for this address
+#define HDC3022_MEASURE_LSB 0x00  // "trigger-on-demand mode" command, lsb
+#define HDC3022_MEASURE_MSB 0x24 // msb; about 12.5ms conversion time
 
 
 

@@ -29,29 +29,30 @@ void measureI2C(uint8_t includePressure)
     if (includePressure)
     {
         // put sensor in one shot mode
-        TXData[0] = LPS25HB_CTRL_REG1;
-        TXData[1] = LPS25HB_ONE_SHOT_MODE;
+        TXData[0] = LPS35HW_CTRL_REG1;
+        TXData[1] = LPS35HW_ONE_SHOT_MODE;
         byteCount = 2;
-        I2CSendCommand(LPS25HB_ADDRESS);
+        I2CSendCommand(LPS35HW_ADDRESS);
 
         // now start measurement
-        TXData[0] = LPS25HB_CTRL_REG2;
-        TXData[1] = LPS25HB_MEASURE_PRESSURE;
+        TXData[0] = LPS35HW_CTRL_REG2;
+        TXData[1] = LPS35HW_MEASURE_PRESSURE;
         byteCount = 2;
-        I2CSendCommand(LPS25HB_ADDRESS);
+        I2CSendCommand(LPS35HW_ADDRESS);
     }
 
     // send command to measure humidity and temperature
-    TXData[0] = SHT40_MEASURE_HT;
-    byteCount = 1;
-    I2CSendCommand(SHT40_ADDRESS);
+    TXData[0] = HDC3022_MEASURE_MSB;
+    TXData[1] = HDC3022_MEASURE_LSB;
+    byteCount = 2;
+    I2CSendCommand(HDC3022_ADDRESS);
 
     // need to wait 10ms for measurement
-    myDelay(125); // delay about 10ms
+    myDelay(180); // delay about 15ms
 
     // now receive humidity and temperature results
     byteCount = 6; // two bytes for humidity plus one for CRC; same for temperature
-    I2CReceiveCommand(SHT40_ADDRESS);
+    I2CReceiveCommand(HDC3022_ADDRESS);
     // now get results
     wxOut.temperature = (RXData[0] << 8) + RXData[1];
     wxOutTime.temperature = epochTime;
@@ -64,21 +65,22 @@ void measureI2C(uint8_t includePressure)
         // verify that measurement is complete
         do {
             byteCount = 1;
-            TXData[0] = LPS25HB_CTRL_REG2;
-            I2CSendCommand(LPS25HB_ADDRESS);
+            TXData[0] = LPS35HW_CTRL_REG2;
+            I2CSendCommand(LPS35HW_ADDRESS);
             byteCount = 1;
-            I2CReceiveCommand(LPS25HB_ADDRESS);
-        } while (RXData[0] != LPS25HB_MEASURE_COMPLETE);
+            I2CReceiveCommand(LPS35HW_ADDRESS);
+        } while (RXData[0] != LPS35HW_MEASURE_COMPLETE);
 
         // now get completed results
         byteCount = 1;
-        TXData[0] = LPS25HB_PRESS_OUT;
-        I2CSendCommand(LPS25HB_ADDRESS);
+        TXData[0] = LPS35HW_PRESS_OUT;
+        I2CSendCommand(LPS35HW_ADDRESS);
         byteCount = 3;
-        I2CReceiveCommand(LPS25HB_ADDRESS);
+        I2CReceiveCommand(LPS35HW_ADDRESS);
         wxOut.pressure = (((uint32_t)RXData[2]) << 16) + (((uint32_t)RXData[1]) << 8) + ((uint32_t)RXData[0]);
         wxOutTime.pressure = epochTime;
-        initPressure();  // power down pressure sensor
+        // for LPS35HW, don't think this is needed below, so comment out for now
+        //initPressure();  // power down pressure sensor
     }
     disableI2C();
 }
@@ -270,10 +272,10 @@ void initPressure(void)
     enableI2C();
 
     // initialize by turning off sensor
-    TXData[0] = LPS25HB_CTRL_REG1;
-    TXData[1] = LPS25HB_POWER_DOWN;
+    TXData[0] = LPS35HW_CTRL_REG1;
+    TXData[1] = LPS35HW_POWER_DOWN;
     byteCount = 2;
-    I2CSendCommand(LPS25HB_ADDRESS);
+    I2CSendCommand(LPS35HW_ADDRESS);
 
     disableI2C();
 }
