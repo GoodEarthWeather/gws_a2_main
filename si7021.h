@@ -43,7 +43,7 @@ static void I2CReceiveCommand(uint8_t address);
 #define LPS35HW_CTRL_REG1 0x10  // control register 1
 #define LPS35HW_CTRL_REG2 0x11  // control register 2
 #define LPS35HW_TEMP_OUT 0x2B  // LSB of temperature output register
-#define LPS35HW_PRESS_OUT 0x28  // LSB_XL of pressure output register = 0x28+0x80 for multi byte read
+#define LPS35HW_PRESS_OUT 0xA8  // LSB_XL of pressure output register = 0x28+0x80 for multi byte read
 #define LPS35HW_POWER_DOWN 0x00  // command to power down
 #define LPS35HW_ONE_SHOT_MODE 0x00  // command to configure to one shot mode
 #define LPS35HW_MEASURE_PRESSURE 0x01  // one shot command to start pressure measurement
