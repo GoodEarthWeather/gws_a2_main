@@ -7,8 +7,10 @@
 
 #include "main.h"
 
-#define INFO_A 0x1980  // memory location of information memory A
+// Not using the INFO memory scheme because I am hard coding the hub and node ID's
 
+#define INFO_A 0x1980  // memory location of information memory A
+// Since there is only one weather station active, I can hard code the hub and node ID
 uint8_t hubID = 0x01;  // address of hub; counts from bottom up
 uint8_t nodeID = 0xFE; // address of this node; counts from top down
 
