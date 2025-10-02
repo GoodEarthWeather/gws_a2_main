@@ -21,6 +21,7 @@ void measureI2C(uint8_t includePressure)
     extern struct sysResults wxOut;
     extern struct sysResultsTime wxOutTime;
     extern uint32_t epochTime;
+    uint8_t p[3];
 
     // enable I2C by configuring the pins
     enableI2C();
@@ -75,12 +76,28 @@ void measureI2C(uint8_t includePressure)
         byteCount = 1;
         TXData[0] = LPS35HW_PRESS_OUT;
         I2CSendCommand(LPS35HW_ADDRESS);
-        byteCount = 3;
+        byteCount = 1;
         I2CReceiveCommand(LPS35HW_ADDRESS);
-        wxOut.pressure = (((uint32_t)RXData[2]) << 16) + (((uint32_t)RXData[1]) << 8) + ((uint32_t)RXData[0]);
+        p[0] = RXData[0];
+
+        byteCount = 1;
+        TXData[0] = LPS35HW_PRESS_OUT+1;
+        I2CSendCommand(LPS35HW_ADDRESS);
+        byteCount = 1;
+        I2CReceiveCommand(LPS35HW_ADDRESS);
+        p[1] = RXData[0];
+
+        byteCount = 1;
+        TXData[0] = LPS35HW_PRESS_OUT+2;
+        I2CSendCommand(LPS35HW_ADDRESS);
+        byteCount = 1;
+        I2CReceiveCommand(LPS35HW_ADDRESS);
+        p[2] = RXData[0];
+
+        wxOut.pressure = (((uint32_t)p[2]) << 16) + (((uint32_t)p[1]) << 8) + ((uint32_t)p[0]);
         wxOutTime.pressure = epochTime;
         // for LPS35HW, don't think this is needed below, so comment out for now
-        //initPressure();  // power down pressure sensor
+        initPressure();  // power down pressure sensor
     }
     disableI2C();
 }
